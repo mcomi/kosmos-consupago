@@ -1,0 +1,504 @@
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="UI Banorte Tarjeta Crédito">
+	<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1, maximum-scale=1">
+
+	<title>Consupago</title>
+
+	<!-- Disable tap highlight on IE -->
+	<meta name="msapplication-tap-highlight" content="no">
+
+	<!-- Web Application Manifest -->
+	<link rel="manifest" href="manifest.json">
+
+	<!-- Add to homescreen for Chrome on Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="bx+">
+	<link rel="icon" sizes="192x192" href="/img/chrome-touch-icon-192x192.png">
+
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="bx+">
+	<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Tile icon for Win8 (144x144 + tile color) -->
+	<meta name="msapplication-TileImage" content="/img/ms-touch-icon-144x144-precomposed.png">
+	<meta name="msapplication-TileColor" content="#263238">
+
+	<!-- Color the status bar on mobile devices -->
+	<meta name="theme-color" content="#263238">
+</head>
+
+<body>
+	<div class="navbar navbar-fixed-top navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true"
+				    aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img src="img/logo.png" alt="">
+				</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+
+				<ul id="desktop-menu" class="nav navbar-nav">
+					<li>
+						<a href="#cotizador">Cotizador</a>
+					</li>
+					<li>
+						<a href="#pasos">¿Cómo funciona?</a>
+					</li>
+					<li>
+						<a href="#testimonios">Testimonios</a>
+					</li>
+					<li>
+						<a href="#preguntas">Preguntas Frecuentes</a>
+					</li>
+					<li>
+						<a href="#secciones">Secciones</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- /.container-fluid -->
+	</div>
+
+
+	<div class="home">
+		<section class="container-landing">
+			<div class="left-half">
+				<article>
+					<img src="img/woman.png" alt="">
+					<div class="promo-container">
+						<h2>Gana hasta $1,500 pesos <span>al obtener tu crédito en línea</span> </h2>
+						<a class="btn-icon-collapse open" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false"
+						    aria-controls="collapseExample">
+							<i class="fa fa-chevron-down"></i>
+						</a>
+						<div class="collapse" id="collapseExample">
+							<table>
+								<thead>
+									<th>MONTO DEL CRÉDITO OTORGADO</th>
+									<th class="border-left">MONTO DE LA PROMOCIÓN</th>
+								</thead>
+								<tbody>
+									<tr>
+										<td>5 mil a 15 mil</td>
+										<td class="border-left">$500.00</td>
+									</tr>
+									<tr>
+										<td>15 mil uno a 30 mil</td>
+										<td class="border-left">$1,000.00</td>
+									</tr>
+									<tr>
+										<td>Mayor a 30 mil</td>
+										<td class="border-left">$1,500.00</td>
+									</tr>
+								</tbody>
+							</table>
+							<p><small>- La promoción es EXCLUSIVA para los clientes que obtengan su crédito en línea.</small></p>
+							<p><small>- El monto de la promoción dependerá del monto del crédito otorgado.</small></p>
+							<p><small>- La promoción será depositada posterior a la entrega del crédito.</small></p>
+							<i class="btn-close-collapse fa fa-chevron-up"></i>
+						</div>
+				</article>
+			</div>
+			<div class="right-half">
+				<article>
+					<div class="grid-panel">
+
+						<div class="panel-cotizador">
+							<div class="panel-cotizador-header">
+								<h1>Aprobamos hasta <strong>80%</strong> <br> de las solicitudes</h1>
+							</div>
+							<div class="panel-cotizador-body">
+								<p class="title-cotizador">
+									<span>1.</span> Selecciona la dependencia donde labores
+								</p>
+								<div class="dependencias-container" id="dependencias-container">
+
+									<div class="div-dependencia">
+										<input type="radio" value="imss-j" id="imss-j" name="dependencia">
+										<label for="imss-j">
+											<div class="icon-item img-jubilados">
+											</div>
+										</label>
+										<p class="credit-text text-center">IMSS Jubilados</p>
+									</div>
+									<div class="div-dependencia">
+										<input type="radio" value="sep" id="sep" name="dependencia">
+										<label for="sep">
+											<div class="icon-item img-sep">
+											</div>
+										</label>
+										<p class="credit-text text-center">SEP</p>
+									</div>
+									<div class="div-dependencia">
+										<input type="radio" value="cdmx" id="cdmx" name="dependencia">
+										<label for="cdmx">
+											<div class="icon-item img-cdmx">
+											</div>
+										</label>
+										<p class="credit-text text-center">GOB. CDMX</p>
+									</div>
+									<div class="div-dependencia">
+										<input type="radio" value="snte" id="snte" name="dependencia">
+										<label for="snte">
+											<div class="icon-item img-snte">
+											</div>
+										</label>
+										<p class="credit-text text-center">SNTE EdoMex 17 y 36 </p>
+									</div>
+									<div class="div-dependencia">
+										<input type="radio" value="pensionados" id="pensionados" name="dependencia">
+										<label for="pensionados">
+											<div class="icon-item img-pensionados">
+											</div>
+										</label>
+										<p class="credit-text text-center">Pensionados</p>
+									</div>
+									<div class="div-dependencia">
+										<input type="radio" value="pemex" id="pemex" name="dependencia">
+										<label for="pemex">
+											<div class="icon-item img-pemex">
+											</div>
+										</label>
+										<p class="credit-text text-center">Pemex</p>
+									</div>
+								</div>
+								<p class="title-cotizador">
+									<span>2.</span> Monto del Préstamo
+								</p>
+								<div>
+									<div class="sliderWrap">
+										<div class="slider-inner-wrapper"> <input id="slider-loan-amount" min="1000" value="1000" max="2000"
+												default_amount="1500" step="10" type="range">
+												<div class="range">
+														<small class="min pull-left">Min</small>
+														<small class="max pull-right">Max</small>
+													  </div>
+										</div>
+									</div>
+								</div>
+								<p class="title-cotizador">
+									<span>3.</span> Plazo del Préstamo
+								</p>
+								<div class="plazos-container">
+									<div class="plazo-item">
+										<p class="plazo-item-cantidad">$441.60</p>
+										<p class="plazo-item-quincenas">120 quincenas</p>
+									</div>
+									<div class="plazo-item">
+										<p class="plazo-item-cantidad">$450.30</p>
+										<p class="plazo-item-quincenas">108 quincenas</p>
+									</div>
+									<div class="plazo-item">
+										<p class="plazo-item-cantidad">$4064.60</p>
+										<p class="plazo-item-quincenas">96 quincenas</p>
+									</div>
+									<div class="plazo-item">
+										<p class="plazo-item-cantidad">$471.70</p>
+										<p class="plazo-item-quincenas">84 quincenas</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+
+		<section class="cel-credit">
+			<div class="row no-margin">
+
+				<div class="col-xs-12 col-md-4">
+					<img src="img/PHONE.png" alt="" class="section-big">
+				</div>
+				<div class="col-xs-12 col-md-8">
+					<h3>MI TRÁMITE</h3>
+					<p class="cel-legend">Si tienes algún trámite abierto con nosotros, <br> puedes consultar aquí el estatus
+						ingresando
+						tu celular:
+					</p>
+					<img src="img/Cel icon.png" class="input-cel-icon">
+					<input id="celular-check" type="text" class="check-status" placeholder="55 1234 5678">
+					<div id="celular-valido" class="col-xs-12 hidden">
+						<p>Ingresa un número de celular válido</p>
+					</div>
+					<div id="btn-consulta-estatus" class="col-xs-12 hidden">
+						<a href="status.html" class="btn btn-form">Consultar</a>
+					</div>
+				</div>
+
+			</div>
+		</section>
+		<section id="pasos" class="container">
+			<div class="text-center steps-header">
+				<h3>TU SOLICITUD EN LÍNEA</h3>
+				<span>en menos de 5 minutos !</span>
+			</div>
+			<div class="col-md-10 col-md-offset-1 steps-info text-center">
+
+				<ul class="steps">
+					<li class="step step--incomplete step--active">
+						<img src="img/budget.png" alt="" class="step-img">
+						<span class="step__icon">1</span>
+						<span class="step__label">Elige tu <br> crédito</span>
+					</li>
+					<li class="step step--incomplete step--inactive">
+						<img src="img/forms.png" alt="" class="step-img">
+						<span class="step__icon">2</span>
+						<span class="step__label">Registrate</span>
+					</li>
+					<li class="step step--incomplete step--inactive">
+						<img src="img/send.png" alt="" class="step-img">
+						<span class="step__icon">3</span>
+						<span class="step__label">Firma y envía <br> contratos</span>
+					</li>
+					<li class="step step--incomplete step--inactive">
+						<img src="img/money.png" alt="" class="step-img">
+						<span class="step__icon">4</span>
+						<span class="step__label">Recibe tu <br> dinero</span>
+					</li>
+				</ul>
+			</div>
+		</section>
+		<section class="testimonios" id="testimonios">
+			<div class="container">
+
+				<div class="text-center steps-header">
+					<h3>TE RESPALDAMOS</h3>
+					<span>cuando más lo necesitas</span>
+				</div>
+				<div class="col-md-6 col-xs-12">
+					<table class="table-testimonios">
+						<tbody>
+							<tr>
+								<td>
+									<div id="count-percentage">0</div><span>de aprobación</span>
+								</td>
+								<td class="border-left">
+									<div id="count-creditos">0</div> <span>creditos otorgados</span>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div id="count-pesos">0</div> <span>pesos de crédito</span>
+								</td>
+								<td class="border-left">
+									<div id="count-anios">0</div> <span>años en el mercado</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-6 col-xs-12" id="testimonios-panel">
+					<div class="testimonio-item col-md-12 col-xs-12">
+						<div class="col-md-4 col-xs-4">
+
+							<img src="img/testimony-1.png" alt="">
+						</div>
+						<div class="col-md-8 col-xs-8">
+							<p class="testimonio-item-name">- Ximena Sanchez
+								<icon class="fa fa-start"></icon>
+								<icon class="fa fa-star"></icon>
+								<icon class="fa fa-star"></icon>
+								<icon class="fa fa-star"></icon>
+								<icon class="fa fa-star"></icon>
+							</p>
+							<p>Es increíble!! es accesible, rápido y sencillo, no tengo que ir más lejos de mi celular <br>
+								<i>28 julio 2018</i> </p>
+						</div>
+					</div>
+					<div class="testimonio-item col-md-12 col-xs-12">
+						<div class="col-md-4 col-xs-4">
+
+							<img src="img/testimony-2.png" alt="">
+						</div>
+						<div class="col-md-8 col-xs-8">
+							<p class="testimonio-item-name">- Laura López
+								<icon class="fa fa-start"></icon>
+								<icon class="fa fa-star"></icon>
+								<icon class="fa fa-star"></icon>
+								<icon class="fa fa-star"></icon>
+								<icon class="fa fa-star"></icon>
+							</p>
+							<p>Fue muy fácil el proceso al no tener que asistir a una sucursal. Recomiendo ampliamente sus servicios
+								financieros
+								<br>
+								<i>15 junio 2018</i> </p>
+						</div>
+					</div>
+					<div class="testimonio-item col-md-12 col-xs-12">
+						<div class="col-md-4 col-xs-4">
+
+							<img src="img/testimony3.png" alt="">
+						</div>
+						<div class="col-md-8 col-xs-8">
+							<p class="testimonio-item-name">- Ximena Sanchez
+								<icon class="fa fa-start"></icon>
+								<icon class="fa fa-star"></icon>
+								<icon class="fa fa-star"></icon>
+								<icon class="fa fa-star"></icon>
+								<icon class="fa fa-star"></icon>
+							</p>
+							<p>Es increíble!! es accesible, rápido y sencillo, no tengo que ir más lejos de mi celular <br>
+								<i>28 julio 2018</i> </p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					<div class="item active">
+						<div class="row" style="padding: 20px">
+							<div class="col-xs-12 col-md-6 col-md-offset-3">
+								<div class="panel panel-border section-panel">
+									<div class="panel-body text-center">
+										<img class="testimonio-pic" src="img/profile.jpg" alt="">
+										<div class="person">
+											<img src="img/quotes.png" alt="">
+											<p>- Laura López</p>
+										</div>
+										<blockquote>
+											Fue muy fácil el proceso al no tener que asistir a una sucursal. Recomiendo ampliamente sus servicios financieros ya que
+											lo puedes realizar desde la comodidad de tu casa.
+										</blockquote>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="row" style="padding: 20px">
+							<div class="col-xs-12 col-md-6 col-md-offset-3">
+								<div class="panel panel-border section-panel">
+									<div class="panel-body text-center">
+										<img class="testimonio-pic" src="img/profile.jpg" alt="">
+										<div class="person">
+											<img src="img/quotes.png" alt="">
+											<p>- Ximena Perujo</p>
+										</div>
+										<blockquote>
+											Es increible!!! en 5 minutos puedo tramitar un credito, es accesible rapido y sencillo, no tengo que ir mas lejos de mi celular
+										</blockquote>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div> -->
+
+
+
+
+		</section>
+
+
+		<section id="preguntas" class="faq">
+			<div class="text-center steps-header">
+				<h3>PREGUNTAS</h3>
+				<span>FRECUENTES</span>
+			</div>
+			<div class="container">
+
+				<div class="col-md-6 col-xs-12 preguntas" id="preguntas-left">
+					<p class="question">¿Por qué no recibo el código en mi celular?</p>
+					<p>
+						Debes validar que el número que capturaste se encuentre correcto, ya que de lo contrario no podrás recibir el
+						código.
+					</p>
+					<p class="question">No puedo avanzar en mi registro ¿qué hago?</p>
+					<p>
+						Asegúrate de haber registrado todos los datos de la pantalla, de lo contrario no podrás avanzar en el registro.
+					</p>
+					<p class="question">No encuentro mi dependencia en las opciones</p>
+					<p>
+						No te preocupes, elige la opción “OTROS” y comienza con tu solicitud
+					</p>
+				</div>
+				<div class="col-md-6 col-xs-12 preguntas" id="preguntas-right">
+
+					<p class="question">¿Cómo puedo identificar la dependencia a la que pertenezco?</p>
+					<p>
+						Puedes revisar tus recibos de nómina y ahí encontrarás los datos de la dependencia a la que perteneces.
+					</p>
+					<p class="question">¿Cuánto tiempo tardan en autorizar el crédito?</p>
+					<p>
+						Una vez que nos has enviado toda la información y documentación correspondiente, tardamos aproximadamente 2 horas
+						en darte una respuesta y ofertas de crédito a tu medida. Una vez que se firma el contrato, tu nos indicas el
+						lugar y
+						la hora en la que podemos recoger los documentos.
+					</p>
+				</div>
+			</div>
+		</section>
+
+
+	</div>
+
+	<footer id="footer">
+		<!-- modal fovissste/infonavit-->
+
+		<!-- .footer-top -->
+		<div class="footer-bottom">
+			<div class="container text-center">
+				<p>¿Necesitas un asesor? Contáctanos</p>
+				<div class="contact-links">
+					<img src="img/whatsapp (1).png" alt=""><a href="tel:5500000000">5541878275</a>
+					<img src="img/sent-mail.png" alt=""><a href="mailto:contact@vepormas.com">contacto@consubanco.com</a>
+				</div>
+
+
+			</div>
+		</div>
+		<!-- .footer-bottom -->
+	</footer>
+	</div>
+
+
+
+	<script src="libs/jquery.js"></script>
+	<script src="libs/bootstrap.js"></script>
+	<script src="libs/rangeslider.min.js"></script>
+
+	<script src="libs/animate.css.min.js"></script>
+	<script src="libs/jquery.animate.css.js"></script>
+	<script src="libs/jquery.waypoints.min.js"></script>
+	<script src="libs/countUp.min.js"></script>
+	<script src="js/index.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#slider-loan-amount').rangeslider();
+		});
+	</script>
+
+	<!-- <script src="js/index.js"></script> -->
+
+
+
+</body>
+
+</html>
