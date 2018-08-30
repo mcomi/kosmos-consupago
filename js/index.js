@@ -150,6 +150,7 @@ $element
     onInit: function() {
       $handle = $('.rangeslider__handle', this.$range);
       updateHandle($handle[0], this.value);
+      $handle.addClass('shake-active');
     }
   })
   .on('input', function() {
@@ -165,6 +166,7 @@ $(document).ready(function(){
   //when slider changes, hide start message
 $("input").on("change", function() {
   $("#helper").fadeOut("slow");
+  $handle.removeClass('shake-active');
 });
 
 //promo-box
@@ -174,4 +176,21 @@ $("#promo-link").on("click", function(){
   return false;
 });
   
+});
+
+
+const menuLinks = $('#desktop-menu a');
+
+menuLinks.each(function(index) {
+  let menuItem = $(this);
+  menuItem.click(function(e){
+    e.preventDefault()
+    let section = this.getAttribute("href");
+    $('html, body').animate({ scrollTop: $(section).offset().top }, 'slow');
+  });
+
+});
+
+$('.btn-cta').click(function(){
+  $('html, body').animate({ scrollTop: $('#cotizador').offset().top }, 'slow');
 });
