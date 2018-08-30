@@ -41,17 +41,32 @@ var stepsWaypoint = new Waypoint({
   element: document.getElementById('pasos'),
   handler: function (direction) {
     $('.step--active').click();
-    setTimeout(function () {
-      $('.step--active').click();
-      setTimeout(function () {
-        $('.step--active').click();
-        setTimeout(function () {
-          $('.step--active').click()
-        }, 2000);
-      }, 2000);
-    }, 2000);
   },
-  offset: 100
+  offset: 110
+})
+
+var stepsWaypoint = new Waypoint({
+  element: document.getElementById('pasos'),
+  handler: function (direction) {
+    $('.step--active').click();
+  },
+  offset: 90
+})
+
+var stepsWaypoint = new Waypoint({
+  element: document.getElementById('pasos'),
+  handler: function (direction) {
+    $('.step--active').click();
+  },
+  offset: 60
+})
+
+var stepsWaypoint = new Waypoint({
+  element: document.getElementById('pasos'),
+  handler: function (direction) {
+    $('.step--active').click();
+  },
+  offset: 30
 })
 
 var faqWaypoint = new Waypoint({

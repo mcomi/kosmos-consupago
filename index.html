@@ -70,7 +70,7 @@
 						<a href="#preguntas">Preguntas Frecuentes</a>
 					</li>
 					<li>
-						<a href="#secciones">Secciones</a>
+						<a href="#secciones" class="solicitud-link"><img src="img/Cel icon.png" class="nav-cel-icon"> Mi solicitud</a>
 					</li>
 				</ul>
 			</div>
@@ -124,7 +124,7 @@
 
 						<div class="panel-cotizador">
 							<div class="panel-cotizador-header">
-								<h1>Aprobamos hasta <strong>80%</strong> <br> de las solicitudes</h1>
+								<h1>Aprobamos hasta <span>80%</span> <br> de las solicitudes</h1>
 							</div>
 							<div class="panel-cotizador-body">
 								<p class="title-cotizador">
@@ -181,16 +181,22 @@
 										<p class="credit-text text-center">Pemex</p>
 									</div>
 								</div>
+								<div class="otras-dependencias">
+									<input type="radio" value="otra" id="otra" name="dependencia">
+									<label for="otra">
+										> OTRAS
+									</label>
+								</div>
 								<p class="title-cotizador">
 									<span>2.</span> Monto del Préstamo
 								</p>
 								<div>
 									<div class="sliderWrap">
-										<div class="slider-inner-wrapper"> <input id="slider-loan-amount" min="1000" value="1000" max="2000"
-												default_amount="1500" step="10" type="range">
+										<div class="slider-inner-wrapper"> <input id="slider-loan-amount" min="1000" value="1000" max="50000"
+												default_amount="1500" step="1000" type="range">
 												<div class="range">
-														<small class="min pull-left">Min</small>
-														<small class="max pull-right">Max</small>
+														<small class="min pull-left">$0</small>
+														<small class="max pull-right">$50,000</small>
 													  </div>
 										</div>
 									</div>
@@ -215,6 +221,9 @@
 										<p class="plazo-item-cantidad">$471.70</p>
 										<p class="plazo-item-quincenas">84 quincenas</p>
 									</div>
+								</div>
+								<div class="text-center">
+									<button class="btn btn-cotizador" disabled>Solicitalo ahora</button>
 								</div>
 							</div>
 						</div>
@@ -272,11 +281,15 @@
 						<span class="step__label">Firma y envía <br> contratos</span>
 					</li>
 					<li class="step step--incomplete step--inactive">
-						<img src="img/money.png" alt="" class="step-img">
-						<span class="step__icon">4</span>
-						<span class="step__label">Recibe tu <br> dinero</span>
+						<img src="img/money-green.png" alt="" class="step-img">
+						<span class="step__icon step-final">4</span>
+						<span class="step__label step-final">Recibe tu <br> dinero</span>
 					</li>
 				</ul>
+				<div class="col-md-12 col-xs-12">
+
+					<a href="" class="btn btn-form"><i class="fa fa-chevron-right"></i> Solicita tu crédito ahora</a>
+				</div>
 			</div>
 		</section>
 		<section class="testimonios" id="testimonios">
