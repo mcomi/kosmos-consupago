@@ -1,13 +1,23 @@
+// evento para abrir promo al dar click en icono
 var btnCollapseOpen = $('.btn-icon-collapse');
 btnCollapseOpen.click(function () {
   $(this).hide()
 });
 
+// abrir promo automaticamente en 15 segundos
+setTimeout(function(){
+  $('.collapse').addClass('in');
+  btnCollapseOpen.hide();
+}, 10000);
+
+
+// evento para cerrar promo al dar click en icono
 $('.btn-close-collapse').click(function () {
   btnCollapseOpen.click()
   btnCollapseOpen.show()
 })
 
+// marcar el plazo activo al momento de dar click
 const plazosBoxes = $('.plazo-item')
 plazosBoxes.each(function () {
   let plazoBox = $(this);
@@ -16,17 +26,18 @@ plazosBoxes.each(function () {
       $(this).removeClass('active');
     })
     $(this).addClass('active');
-    //var valorMeses = $(this).find('span').attr('id');  // obtengo el valor de meses elegidos
+    //var valorPlazo = $(this).find('p').attr('plazo');  // obtengo el valor del plazo elegido
   })
 });
 
-
+// evento para animacion de pasos de la solicitud
 $('.steps').on('click', '.step--active', function () {
   $(this).removeClass('step--incomplete').addClass('step--complete');
   $(this).removeClass('step--active').addClass('step--inactive');
   $(this).next().removeClass('step--inactive').addClass('step--active');
 });
 
+// evento para regresar un paso mediante click
 $('.steps').on('click', '.step--complete', function () {
   $(this).removeClass('step--complete').addClass('step--incomplete');
   $(this).removeClass('step--inactive').addClass('step--active');
@@ -34,9 +45,8 @@ $('.steps').on('click', '.step--complete', function () {
   $(this).nextAll().removeClass('step--active').addClass('step--inactive');
 });
 
-// libreria Waypoint para detectar cuando el scroll llega a una seccion en especifico y llamar funcion
+// libreria Waypoint para detectar cuando el scroll llega a una seccion en especifico ejecutar diferentes animaciones
 $('.preguntas').addClass('hidden-opacity');
-$('#testimonios-panel').addClass('hidden-opacity');
 var stepsWaypoint = new Waypoint({
   element: document.getElementById('pasos'),
   handler: function (direction) {
@@ -82,7 +92,6 @@ var faqWaypoint = new Waypoint({
 var testimoniosWaypoint = new Waypoint({
   element: document.getElementById('testimonios'),
   handler: function (direction) {
-    $('#testimonios-panel').addClass('visible animated bounceInUp');
     if (!counterPercentage.error) {  
       counterPercentage.start();
     } else {  
@@ -140,7 +149,7 @@ var counterAnios = new CountUp('count-anios', 0, 8, 0, 6, {  
 
 
 // rangeslider
-//custom slider javascript
+// slider para seleccionar el monto del credito
 var $element = $('input[type="range"]');
 var $handle;
 
@@ -178,7 +187,7 @@ $("#promo-link").on("click", function(){
   
 });
 
-
+// evento para hacer el scroll lento a las diferentes secciones del menu
 const menuLinks = $('#desktop-menu a');
 
 menuLinks.each(function(index) {
@@ -191,6 +200,31 @@ menuLinks.each(function(index) {
 
 });
 
+
+// scroll hacia el cotizador 
 $('.btn-cta').click(function(){
   $('html, body').animate({ scrollTop: $('#cotizador').offset().top }, 'slow');
+});
+
+// efecto de ir escribiendo texto con libreria Typed
+document.addEventListener('DOMContentLoaded', function(){
+
+  Typed.new("#typed", {
+      stringsElement: document.getElementById('typed-strings'),
+      typeSpeed: 40,
+      backDelay: 500,
+      loop: 2,
+      contentType: 'html', // or text
+      // defaults to null for infinite loop
+      loopCount: null,
+      resetCallback: function() { newTyped(); }
+  });
+
+  var resetElement = document.querySelector('.reset');
+  if(resetElement) {
+      resetElement.addEventListener('click', function() {
+          document.getElementById('typed')._typed.reset();
+      });
+  }
+
 });
