@@ -207,19 +207,19 @@
 								<div class="plazos-container">
 									<div class="plazo-item">
 										<p class="plazo-item-cantidad">$441.60</p>
-										<p class="plazo-item-quincenas">120 quincenas</p>
+										<p class="plazo-item-quincenas" data-plazo="120">120 quincenas</p>
 									</div>
 									<div class="plazo-item">
 										<p class="plazo-item-cantidad">$450.30</p>
-										<p class="plazo-item-quincenas">108 quincenas</p>
+										<p class="plazo-item-quincenas" data-plazo="108">108 quincenas</p>
 									</div>
 									<div class="plazo-item">
 										<p class="plazo-item-cantidad">$464.60</p>
-										<p class="plazo-item-quincenas">96 quincenas</p>
+										<p class="plazo-item-quincenas" data-plazo="96">96 quincenas</p>
 									</div>
 									<div class="plazo-item">
 										<p class="plazo-item-cantidad">$471.70</p>
-										<p class="plazo-item-quincenas">84 quincenas</p>
+										<p class="plazo-item-quincenas" data-plazo="84">84 quincenas</p>
 									</div>
 								</div>
 								<div class="text-center">
@@ -241,10 +241,13 @@
 				</div>
 				<div class="col-xs-12 col-md-8">
 					<h3>MI TRÁMITE</h3>
-					<p class="cel-legend">Si tienes algún trámite abierto con nosotros, <br> puedes consultar aquí el estatus
-						ingresando
-						tu celular:
-					</p>
+					<div class="type-wrap">
+							<div id="typed-strings">
+								<span>Si tienes algún trámite abierto con nosotros, <br> puedes consultar aquí el estatus ingresando tu celular:</span>
+							</div>
+							<span id="typed" class="cel-legend" style="white-space:pre;"></span>
+					</div>
+					
 					<img src="img/Cel icon.png" class="input-cel-icon">
 					<input id="celular-check" type="text" class="check-status" placeholder="55 1234 5678">
 					<div id="celular-valido" class="col-xs-12 hidden">
@@ -501,6 +504,7 @@
 	<script src="libs/jquery.animate.css.js"></script>
 	<script src="libs/jquery.waypoints.min.js"></script>
 	<script src="libs/countUp.min.js"></script>
+	<script src="libs/typed.js"></script>
 	<script src="js/index.js"></script>
 	<script>
 		$(document).ready(function () {

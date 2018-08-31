@@ -945,11 +945,17 @@ p.credit-text {
   color: #FFFFFF;
   padding-top: 40; }
 
+.type-wrap  {
+  padding: 15px 20px; }
+
 .cel-legend {
   font-size: 24px;
   color: #fff;
-  text-align: center;
-  padding: 15px 20px; }
+  text-align: center; }
+
+.typed-cursor {
+  font-size: 24px;
+  color: #fff; }
 
 .input-cel-icon {
   position: relative;
