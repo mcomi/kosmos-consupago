@@ -6,7 +6,7 @@ btnCollapseOpen.click(function () {
 
 // abrir promo automaticamente en 15 segundos
 setTimeout(function(){
-  $('.collapse').addClass('in');
+  $('#collapseExample').addClass('in');
   btnCollapseOpen.hide();
 }, 10000);
 

@@ -1309,13 +1309,15 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
         -ms-flex-positive: 1;
             flex-grow: 1;
     width: 30%; }
+  .testimonios {
+    min-height: 745px; }
   p.plazo-item-cantidad {
     font-size: 16px; }
   p.plazo-item-quincenas {
     font-size: 11px; }
   .cel-credit {
     margin: 0;
-    min-height: 400px; }
+    min-height: 330px; }
   .cel-credit h3 {
     font-size: 28px;
     padding-top: 20px; }
@@ -1356,7 +1358,8 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
   .steps-info img {
     height: auto;
     width: 75px; }
-  .step:not(:last-child):before, .step:not(:last-child):after {
+  .step:not(:last-child):before,
+  .step:not(:last-child):after {
     display: block;
     position: absolute;
     top: 53%;
