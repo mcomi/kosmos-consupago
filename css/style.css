@@ -824,6 +824,9 @@ input[type="radio"]:checked + label .img-cdmx {
   background: transparent;
   border-radius: 0; }
 
+#back-link-cotizador {
+  cursor: pointer; }
+
 .btn-outline:hover {
   border-color: #ed671e;
   color: #fff;
@@ -1434,6 +1437,81 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
 @media (min-width: 1115px) {
   .navbar-nav > li {
     padding: 20px 10px 15px 18px; } }
+
+/* Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+  .container-landing {
+    margin-top: 30px;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr; }
+  .promo-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 12px 40px; }
+  .left-half article {
+    top: 49%; }
+  .left-half {
+    -ms-grid-column: 2;
+        grid-column: 2; }
+  .panel-cotizador {
+    width: 90%;
+    margin: 0 auto; }
+  .cel-credit img.section-big {
+    display: none; }
+  .steps {
+    padding: 0px 0 8rem 0; }
+  .step__label {
+    position: absolute;
+    bottom: -9rem; }
+  .table-testimonios {
+    margin: 10px auto; }
+  #testimonios-panel {
+    padding-top: 20px; }
+  .dependencias-container {
+    grid-auto-columns: minmax(76px, 0.5fr); } }
+
+/* Landscape */
+@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+  .container-landing {
+    margin-top: 30px;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr; }
+  .promo-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 12px 40px; }
+  .left-half article {
+    top: 49%; }
+  .left-half {
+    -ms-grid-column: 2;
+        grid-column: 2; }
+  .panel-cotizador {
+    width: 90%;
+    margin: 0 auto; }
+  .cel-credit img.section-big {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    height: 300px; }
+  .steps {
+    padding: 0px 0 8rem 0; }
+  .step__label {
+    position: absolute;
+    bottom: -9rem; }
+  .table-testimonios {
+    margin: 10px auto; }
+  #testimonios-panel {
+    padding-top: 20px; } }
 
 @media (max-width: 435px) {
   .navbar-brand > img {

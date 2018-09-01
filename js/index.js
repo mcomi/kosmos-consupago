@@ -64,16 +64,38 @@ plazosBoxes.each(function () {
   })
 });
 
+// habilitar boton si se  ha elegido un plazo y dependencia
 function checkFormCotizador() {
   if(valorPlazo!==1 && dependenciaSeleccionada !== ''){
     $('.btn-cotizador').attr('disabled', false);
   }
 }
 
+// formateo de celular
+let celCheck = new Cleave('#celular-check', {
+  phone: true,
+  phoneRegionCode: 'MX'
+})
+
+$('#celular-check').keyup(function(){
+  let regex = /^\(?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
+  if (regex.test($(this).val())) {
+    $('#btn-consulta-estatus').removeClass('hidden');
+  }
+})
+
+// paso a formulario datos básicos
 $('.btn-cotizador').click(function(){
   $('#elegir-monto').fadeOut('slow');
   $('#datos-solicitud').fadeIn('slow');
   document.getElementById('header-title').innerHTML = `Completar tu solicitud <br> es <span>Fácil</span> y <span>Rápido</span>`;
+})
+
+// regresa a seleccion monto y plazo
+$('#back-link-cotizador').click(function(){
+  $('#datos-solicitud').fadeOut('slow');
+  $('#elegir-monto').fadeIn('slow');
+  document.getElementById('header-title').innerHTML = `Aprobamos hasta <span>80%</span> <br> de las solicitudes`;
 })
 
 // evento para animacion de pasos de la solicitud
