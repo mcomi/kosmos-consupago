@@ -1,3 +1,12 @@
+// objeto constructor para formateo dinero
+var formatter = new Intl.NumberFormat('es-MX', {
+  style: 'currency',
+  currency: 'MXN',
+  minimumFractionDigits: 2,
+});
+
+
+$('#datos-solicitud').fadeOut();
 // evento para abrir promo al dar click en icono
 var btnCollapseOpen = $('.btn-icon-collapse');
 btnCollapseOpen.click(function () {
@@ -17,7 +26,31 @@ $('.btn-close-collapse').click(function () {
   btnCollapseOpen.show()
 })
 
+// variables para manejar el cambio de cifras en la interfaz
+var monto120quincenas = $('#120quincenas');
+var monto108quincenas = $('#108quincenas');
+var monto96quincenas = $('#96quincenas');
+var monto84quincenas = $('#84quincenas');
+let valorPlazo = 1;
+let montoCredito = 0;
+  
+// simula calculo de monto de plazos al mover el monto del credito
+function calcularPlazos() {
+    monto120quincenas.html(formatter.format((montoCredito / 120).toFixed(2)));
+    monto108quincenas.html(formatter.format((montoCredito / 108).toFixed(2)));
+    monto96quincenas.html(formatter.format((montoCredito / 96).toFixed(2)));
+    monto84quincenas.html(formatter.format((montoCredito / 84).toFixed(2)));
+}
+
+// marca la dependencia
+let dependenciaSeleccionada = '';
+$('input[name="dependencia"]').change(function(){
+  dependenciaSeleccionada = $(this).val();
+  checkFormCotizador()
+})
+
 // marcar el plazo activo al momento de dar click
+
 const plazosBoxes = $('.plazo-item')
 plazosBoxes.each(function () {
   let plazoBox = $(this);
@@ -26,9 +59,22 @@ plazosBoxes.each(function () {
       $(this).removeClass('active');
     })
     $(this).addClass('active');
-    //var valorPlazo = $(this).find('p').attr('plazo');  // obtengo el valor del plazo elegido
+    valorPlazo = parseInt($(this).find('.plazo-item-quincenas').data('plazo'));  // obtengo el valor del plazo elegido
+    checkFormCotizador()
   })
 });
+
+function checkFormCotizador() {
+  if(valorPlazo!==1 && dependenciaSeleccionada !== ''){
+    $('.btn-cotizador').attr('disabled', false);
+  }
+}
+
+$('.btn-cotizador').click(function(){
+  $('#elegir-monto').fadeOut('slow');
+  $('#datos-solicitud').fadeIn('slow');
+  document.getElementById('header-title').innerHTML = `Completar tu solicitud <br> es <span>Fácil</span> y <span>Rápido</span>`;
+})
 
 // evento para animacion de pasos de la solicitud
 $('.steps').on('click', '.step--active', function () {
@@ -168,12 +214,13 @@ $element
 
 function updateHandle(el, val) {
   el.textContent = " " + "$" + val + " ";
+  montoCredito = parseInt(val);
+  calcularPlazos();
 }
 
 $(document).ready(function(){
-  
   //when slider changes, hide start message
-$("input").on("change", function() {
+$("input[type='range']").on("change", function() {
   $("#helper").fadeOut("slow");
   $handle.removeClass('shake-active');
 });
@@ -228,3 +275,69 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
 });
+
+// validacion forma
+$(function() {
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+  $("#forma-datos").validate({
+    groups: {
+      requeridosGroup: "nombre apmaterno appaterno email celular"
+    } ,
+    // Specify validation rules
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+      nombre: "required",
+      apmaterno: "required",
+      appaterno: "required",
+      email: {
+        required: true,
+        // Specify that email should be validated
+        // by the built-in "email" rule
+        email: true
+      },
+      celular: {
+        required: true,
+        number: true
+      }
+    },
+    // Specify validation error messages
+    messages: {
+      nombre: "<i class='fa fa-exclamation-circle'></i> Todos los campos son requeridos",
+      apmaterno: "<i class='fa fa-exclamation-circle'></i> Todos los campos son requeridos",
+      appaterno: "<i class='fa fa-exclamation-circle'></i> Todos los campos son requeridos",
+      email: { required: "<i class='fa fa-exclamation-circle'></i> Todos los campos son requeridos", email: "Introduzca un correo válido" }, 
+      celular: { required: "<i class='fa fa-exclamation-circle'></i> Todos los campos son requeridos", number: "Introduzca un celular válido" }
+    },
+    validClass: "valid",
+    errorClass: 'invalid',
+    errorLabelContainer: "#messageBox",
+
+    // Make sure the form is submitted to the destination defined
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+      $('#mandar-codigo-cel').removeClass('hidden');
+      setTimeout(function(){
+        $('#loader-phone-message').addClass('hidden');
+        $('#sms-input-container').removeClass('hidden');
+      },3000)
+    }
+  });
+});
+
+// evento para que pase en automatico los numeros del codigo sms
+var indexCodeInput = 0;
+$(".code-input").bind('keyup', function() {
+  var value = $(this).val()
+  var regex = /^\d+$/
+  if (regex.test(value)) {
+    if (indexCodeInput < 5) {
+      $(this).next().focus()
+      if(indexCodeInput == 4) $('#validando-sms').removeClass('hidden');
+    }
+    indexCodeInput++;
+  }
+});
+
