@@ -1634,7 +1634,7 @@ ul.steps-list li {
   filter: brightness(1.2) grayscale(0.5) opacity(0.9); }
 
 .deudas-icon {
-  background-image: url("../img/coin copy.png");
+  background-image: url("../img/coin-copy.png");
   background-size: 15px;
   background-repeat: no-repeat;
   background-position: top; }
@@ -2055,7 +2055,8 @@ ul.steps-list li span {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
-    width: 47%; }
+    width: 47%;
+    margin: 10px 0; }
   .item-ocupacion {
     padding: 0; }
   .testimonios {
