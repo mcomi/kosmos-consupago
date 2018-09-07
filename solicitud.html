@@ -1,0 +1,375 @@
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="UI Banorte Tarjeta Crédito">
+	<meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1, maximum-scale=1">
+
+	<title>Consupago</title>
+
+	<!-- Disable tap highlight on IE -->
+	<meta name="msapplication-tap-highlight" content="no">
+
+	<!-- Web Application Manifest -->
+	<link rel="manifest" href="manifest.json">
+
+	<!-- Add to homescreen for Chrome on Android -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="bx+">
+	<link rel="icon" sizes="192x192" href="/img/chrome-touch-icon-192x192.png">
+
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="bx+">
+	<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Tile icon for Win8 (144x144 + tile color) -->
+	<meta name="msapplication-TileImage" content="/img/ms-touch-icon-144x144-precomposed.png">
+	<meta name="msapplication-TileColor" content="#263238">
+
+	<!-- Color the status bar on mobile devices -->
+	<meta name="theme-color" content="#263238">
+</head>
+
+<body>
+	<div class="navbar navbar-fixed-top navbar-default navbar-formulario">
+		<div class="container">
+			<div class="progress" id="progress1">
+				<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0"
+					aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+					<span class="progress-completed">0%</span>
+				</div>
+			</div>
+			<h3 id="mobile-form-header" class="mobile-header">Datos generales</h3>
+			<ul class="ruler">
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			<ul class="text-ruler">
+					<li>Datos generales</li>
+					<li>Carga de Documentos
+					</li>
+					<li>Validación Documental
+					</li>
+					<li>Firma y envío de contratos
+					</li>
+				</ul>
+			<!-- <div class="range">
+				<input type="range" min="1" max="4" steps="1" value="1">
+			</div>
+			<ul class="range-labels">
+
+				<li>Datos generales</li>
+				<li>Carga de Documentos</li>
+				<li>Validación Documental</li>
+				<li>Firma y envío de contratos</li>
+			</ul> -->
+		</div>
+	</div>
+	<div class="row bg">
+
+		<div class="container form-container">
+			<div class="panel panel-primary" id="step-1">
+				<div class="panel-heading">¿Para que usaras tu dinero?</div>
+				<div class="panel-body">
+					<div class="uso-dinero-items">
+						<div class="eleccion-uso-item">
+							<input type="radio" name="uso-seleccionado" id="deudas">
+							<label for="deudas" class="label-img deudas-icon">
+								<span class="eleccion-uso-item-cantidad" id="120quincenas">Pagar deudas</span>
+							</label>
+	
+						</div>
+						<div class="eleccion-uso-item">
+							<input type="radio" name="uso-seleccionado" id="viaje">
+							<label for="viaje" class="label-img viaje-icon">
+								<span class="eleccion-uso-item-cantidad" id="108quincenas">Viaje</span>
+							</label>
+	
+						</div>
+						<div class="eleccion-uso-item">
+							<input type="radio" name="uso-seleccionado" id="negocio">
+							<label for="negocio" class="label-img negocio-icon">
+								<span class="eleccion-uso-item-cantidad" id="96quincenas">Iniciar negocio</span>
+							</label>
+	
+						</div>
+						<div class="eleccion-uso-item">
+							<input type="radio" name="uso-seleccionado" id="hogar">
+							<label for="hogar" class="label-img hogar-icon">
+								<span class="eleccion-uso-item-cantidad" id="84quincenas">Mejorar hogar
+								</span>
+							</label>
+	
+						</div>
+						<div class="eleccion-uso-item">
+							<input type="radio" name="uso-seleccionado" id="estudios">
+							<label for="estudios" class="label-img estudios-icon">
+								<span class="eleccion-uso-item-cantidad" id="84quincenas">Estudios</span>
+							</label>
+	
+						</div>
+						<div class="eleccion-uso-item">
+							<input type="radio" name="uso-seleccionado" id="otro_uso">
+							<label for="otro_uso" class="label-img otro-uso-icon">
+								<span class="eleccion-uso-item-cantidad" id="84quincenas">Otros</span>
+							</label>
+	
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-primary hidden" id="step-2">
+				<div class="panel-heading">¿Cuál es tu ocupación?</div>
+				<div class="panel-body">
+					<div class="ocupaciones-box">
+						<div class="item-ocupacion">
+							<input type="radio" name="eleccion-ocupacion" id="empleado">
+							<label for="empleado" class="label-ocupacion">
+								<span class="text-ocupacion">Empleado</span>
+							</label>
+	
+						</div>
+						<div class="item-ocupacion">
+							<input type="radio" name="eleccion-ocupacion" id="desempleado">
+							<label for="desempleado" class="label-ocupacion">
+								<span class="text-ocupacion">Desempleado</span>
+							</label>
+	
+						</div>
+						<div class="item-ocupacion">
+							<input type="radio" name="eleccion-ocupacion" id="empresario">
+							<label for="empresario" class="label-ocupacion">
+								<span class="text-ocupacion">Iniciar negocio</span>
+							</label>
+	
+						</div>
+						<div class="item-ocupacion">
+							<input type="radio" name="eleccion-ocupacion" id="socio">
+							<label for="socio" class="label-ocupacion">
+								<span class="text-ocupacion">Socio
+								</span>
+							</label>
+	
+						</div>
+						<div class="item-ocupacion">
+							<input type="radio" name="eleccion-ocupacion" id="militar">
+							<label for="militar" class="label-ocupacion">
+								<span class="text-ocupacion">Militar</span>
+							</label>
+	
+						</div>
+						<div class="item-ocupacion">
+							<input type="radio" name="eleccion-ocupacion" id="otra-ocupacion">
+							<label for="otra-ocupacion" class="label-ocupacion">
+								<span class="text-ocupacion">Otro</span>
+							</label>
+	
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-primary hidden" id="step-3">
+				<div class="panel-heading">¿Cuál es tu banco?</div>
+				<div class="panel-body">
+					<div class="col-xs-12 form-horizontal">
+						<div class="form-group">
+							<label for="cuenta" class="col-sm-5 control-label">*Cuenta de depósito de su Nómina o Pensión</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control input-form" name="cuenta" id="cuenta" placeholder="">
+								
+							</div>
+	
+						</div>
+						<div class="form-group">
+							<label for="banco" class="col-sm-5 control-label">*Nombre del Banco</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control input-form" name="banco" id="banco" placeholder="">
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="panel panel-primary hidden" id="step-4">
+				<div class="panel-heading">Información</div>
+				<div class="panel-body">
+					<div class="col-xs-12 form-horizontal">
+						<div class="form-group">
+							<label for="expuesto" class="col-sm-5 control-label">*¿Es usted una persona políticamente expuesta?</label>
+							<div class="col-sm-7">
+								<div class="squared">
+									<input type="radio" value="si-expuesta" id="si-expuesta" name="persona-expuesta" />
+									<label for="si-expuesta">Si <i class="fa fa-check"></i> </label>
+	
+								</div>
+								<div class="squared">
+									<input type="radio" value="no-expuesta" id="no-expuesta" name="persona-expuesta" />
+									<label for="no-expuesta">No <i class="fa fa-close"></i></label>
+	
+								</div>
+							</div>
+	
+						</div>
+						<div class="form-group">
+							<label for="pariente-politica-expuesta" class="col-sm-5 control-label">*¿Tiene parentesco con alguna persona
+								políticamente expuesta?</label>
+							<div class="col-sm-7">
+								<div class="squared">
+									<input type="radio" value="si-p-expuesta" id="si-p-expuesta" name="pariente-expuesta" />
+									<label for="si-p-expuesta">Si <i class="fa fa-check"></i> </label>
+	
+								</div>
+								<div class="squared">
+									<input type="radio" value="no-p-expuesta" id="no-p-expuesta" name="pariente-expuesta" />
+									<label for="no-p-expuesta">No <i class="fa fa-close"></i></label>
+	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-primary hidden" id="step-5">
+				<div class="panel-heading">Datos generales</div>
+				<div class="panel-body">
+					<div class="col-xs-12 form-horizontal">
+						<div class="form-group">
+							<label for="pais" class="col-sm-5 control-label">*Nacionalidad</label>
+							<div class="col-sm-7">
+								<div class="squared">
+									<input type="radio" value="mexicana" id="mexicana" name="nacionalidad" />
+									<label for="mexicana">Mexicano</label>
+	
+								</div>
+								<div class="squared">
+									<input type="radio" value="extranjero" id="extranjero" name="nacionalidad" />
+									<label for="extranjero">Extranjero</label>
+	
+								</div>
+							</div>
+	
+						</div>
+						<div class="form-group">
+							<label for="pais-nac" class="col-sm-5 control-label">*País de nacimiento</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control input-form" name="pais-nac" id="pais-nac" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="lugar-nac" class="col-sm-5 control-label">*Lugar de nacimiento</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control input-form" name="lugar-nac" id="lugar-nac" placeholder="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-primary hidden" id="step-6">
+				<div class="panel-heading">Datos personales</div>
+				<div class="panel-body">
+					<div class="col-xs-12 form-horizontal">
+						<div class="form-group">
+							<label for="tel-casa" class="col-sm-5 control-label">*Teléfono de Domicilio</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control input-form" name="tel-casa" id="tel-casa" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="pais" class="col-sm-5 control-label">*Estado Civil</label>
+							<div class="col-sm-7">
+								<div class="squared">
+									<input type="radio" value="casado" id="casado" name="edo-civil" />
+									<label for="casado">Casado</label>
+	
+								</div>
+								<div class="squared">
+									<input type="radio" value="soltero" id="soltero" name="edo-civil" />
+									<label for="soltero">Soltero</label>
+								</div>
+								<div class="squared">
+									<input type="radio" value="otro" id="otro" name="edo-civil" />
+									<label for="otro">Otro</label>
+								</div>
+							</div>
+	
+						</div>
+						<div class="hidden" id="conyuge-inputs">
+							<div class="form-group">
+								<label for="nombre-conyugue" class="col-sm-5 control-label">*Nombre Cónyugue</label>
+								<div class="col-sm-7">
+									<input type="text" class="form-control input-form" name="nombre-conyugue" id="nombre-conyugue" placeholder="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="ap-p-conyugue" class="col-sm-5 control-label">*Apellido Paterno Cónyugue</label>
+								<div class="col-sm-7">
+									<input type="text" class="form-control input-form" name="ap-p-conyugue" id="ap-p-conyugue" placeholder="">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="ap-m-conyugue" class="col-sm-5 control-label">*Apellido Materno Cónyugue</label>
+								<div class="col-sm-7">
+									<input type="text" class="form-control input-form" name="ap-m-conyugue" id="ap-m-conyugue" placeholder="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="panel panel-primary hidden" id="step-7">
+				<div class="panel-heading">Referencias personales</div>
+				<div class="panel-body">
+					<div class="col-xs-12 form-horizontal">
+						<div class="form-group">
+							<label for="nombre-ref" class="col-sm-5 control-label">*Nombre</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control input-form" name="nombre-ref" id="nombre-ref" placeholder="">
+							</div>
+						</div>
+	
+						<div class="form-group">
+							<label for="parencezco" class="col-sm-5 control-label">*Parentezco</label>
+							<div class="col-sm-7">
+								<select class="form-control input-form" name="parencezco" id="parencezco">
+									<option value="familiar">Familiar</option>
+									<option value="amigo">Amigo</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="tel-casa-ref" class="col-sm-5 control-label">*Teléfono Casa</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control input-form" name="tel-casa-ref" id="tel-casa-ref" placeholder="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="tel-cel-erf" class="col-sm-5 control-label">*Teléfono Celular</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control input-form" name="tel-cel-erf" id="tel-cel-erf" placeholder="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="col-xs-12 text-center hidden" id="btn-finish-step-1">
+				<a href="" class="btn btn-big-form">Estas a un paso de obtener tu crédito <br> CONTINUAR</a>
+			</div>
+	
+		</div>
+	</div>
+
+	<script src="libs/jquery.js"></script>
+	<script src="libs/bootstrap.js"></script>
+	<script src="js/solicitud.js"></script>
+</body>
