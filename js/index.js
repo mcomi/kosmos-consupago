@@ -98,6 +98,13 @@ $('#back-link-cotizador').click(function(){
   document.getElementById('header-title').innerHTML = `Aprobamos hasta <span>80%</span> <br> de las solicitudes`;
 })
 
+// corregir telefono
+$('#btn-corregir-cel').click( function() {
+  $('#mandar-codigo-cel').addClass('hidden');
+  $('#sms-input-container').addClass('hidden');
+  $('#celular').focus().val('');
+})
+
 // evento para animacion de pasos de la solicitud
 $('.steps').on('click', '.step--active', function () {
   $(this).removeClass('step--incomplete').addClass('step--complete');
@@ -120,7 +127,7 @@ var stepsWaypoint = new Waypoint({
   handler: function (direction) {
     $('.step--active').click();
   },
-  offset: 110
+  offset: '50%'
 })
 
 var stepsWaypoint = new Waypoint({
@@ -128,7 +135,7 @@ var stepsWaypoint = new Waypoint({
   handler: function (direction) {
     $('.step--active').click();
   },
-  offset: 90
+  offset: '40%'
 })
 
 var stepsWaypoint = new Waypoint({
@@ -136,7 +143,7 @@ var stepsWaypoint = new Waypoint({
   handler: function (direction) {
     $('.step--active').click();
   },
-  offset: 60
+  offset: '30%'
 })
 
 var stepsWaypoint = new Waypoint({
@@ -144,7 +151,7 @@ var stepsWaypoint = new Waypoint({
   handler: function (direction) {
     $('.step--active').click();
   },
-  offset: 30
+  offset: '20%'
 })
 
 var faqWaypoint = new Waypoint({
@@ -154,7 +161,7 @@ var faqWaypoint = new Waypoint({
     $('#preguntas-left').addClass('animated bounceInLeft');
     $('#preguntas-right').addClass('animated bounceInRight');
   },
-  offset: -140
+  offset: '20%'
 })
 
 var testimoniosWaypoint = new Waypoint({
@@ -181,7 +188,7 @@ var testimoniosWaypoint = new Waypoint({
       console.error(counterAnios.error);
     }
   },
-  offset: 100
+  offset: 'bottom-in-view'
 })
 
 
@@ -235,7 +242,7 @@ $element
   });
 
 function updateHandle(el, val) {
-  el.textContent = " " + "$" + val + " ";
+  el.textContent = " " + formatter.format(val) + " ";
   montoCredito = parseInt(val);
   calcularPlazos();
 }
@@ -264,7 +271,7 @@ menuLinks.each(function(index) {
   menuItem.click(function(e){
     e.preventDefault()
     let section = this.getAttribute("href");
-    $('html, body').animate({ scrollTop: $(section).offset().top }, 'slow');
+    $('html, body').animate({ scrollTop: $(section).offset().top - 100 }, 'slow');
   });
 
 });
@@ -341,6 +348,7 @@ $(function() {
     // in the "action" attribute of the form when valid
     submitHandler: function(form) {
       $('#mandar-codigo-cel').removeClass('hidden');
+      $('#loader-phone-message').removeClass('hidden');
       setTimeout(function(){
         $('#loader-phone-message').addClass('hidden');
         $('#sms-input-container').removeClass('hidden');
@@ -357,7 +365,12 @@ $(".code-input").bind('keyup', function() {
   if (regex.test(value)) {
     if (indexCodeInput < 5) {
       $(this).next().focus()
-      if(indexCodeInput == 4) $('#validando-sms').removeClass('hidden');
+      if(indexCodeInput == 4) {
+        $('#validando-sms').removeClass('hidden');
+        setTimeout(function(){
+          window.location.href = window.location.origin+'/solicitud.html';
+        }, 2000)
+      }
     }
     indexCodeInput++;
   }
