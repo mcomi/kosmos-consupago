@@ -96,3 +96,13 @@ function calcularAvance(percent) {
     $(".progress-bar").css("width", percent + "%").attr("aria-valuenow", percent);
     $(".progress-completed").text(percent + "%"); 
   }
+
+  $('#boton-carga-desde-pc').click(function(){
+      $('#step-1-carga').hide('slow');
+      $('#step-2-carga').removeClass('hidden').addClass('animated bounceIn');
+  })
+
+  $('#btn-avanza-carga-docs').click(function(){
+      $('#datos-generales').addClass('animated fadeOutLeft hidden');
+      $('#carga-docs').removeClass('hidden').addClass('animated bounceInRight');
+  })
