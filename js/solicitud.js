@@ -106,3 +106,16 @@ function calcularAvance(percent) {
       $('#datos-generales').addClass('animated fadeOutLeft hidden');
       $('#carga-docs').removeClass('hidden').addClass('animated bounceInRight');
   })
+
+  $('.panel-icon input').change(function(e) {
+      if (e.target.files[0].name) {
+          var fileName = e.target.files[0].name;
+          console.log('The file "' + fileName +  '" has been selected.');  
+          var input = $(this);
+          setTimeout(function(){
+              input.closest('.panel-icon').addClass('uploaded');
+              var rutaImagen = input.siblings('.icon-tipo-doc').attr('src');
+              input.siblings('.icon-tipo-doc').attr('src', rutaImagen.replace(/(\.[\w\d_-]+)$/i, '-white.png'));
+          }, 1500);
+      }
+  })

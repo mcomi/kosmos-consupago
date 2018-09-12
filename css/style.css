@@ -561,7 +561,6 @@ article {
   text-align: left;
   padding: 10px; }
 
-input[type=file],
 input[type=radio] {
   display: none; }
 
@@ -2007,6 +2006,65 @@ img.arrow-right {
   font-family: 'nexa_light';
   color: #333;
   text-align: left; }
+
+.panel-icons {
+  color: #333;
+  text-align: center; }
+
+.panel-icon {
+  background: #FFFFFF;
+  border: 1px solid #333;
+  padding: 25px 0;
+  margin: 5px 0;
+  text-align: center;
+  cursor: pointer;
+  min-height: 112px; }
+
+.panel-icon ~ span {
+  font-family: 'nexa_regular';
+  text-transform: uppercase;
+  color: #0061a8; }
+
+.panel-icon.uploaded {
+  background: #5cb85c;
+  color: #fff; }
+
+.panel-icon.uploaded:after {
+  content: '';
+  background-image: url("../img/validationgreen.png");
+  width: 32px;
+  height: 36px;
+  top: -12px;
+  right: 2px;
+  position: absolute;
+  display: inline-block; }
+
+/* input files */
+.panel-upload-pc div {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.panel-upload-pc [type="file"] {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.panel-icon img {
+  margin: 10px 15px; }
+
+.panel-icon span {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left; }
+
+.margin-bottom-20 {
+  margin-bottom: 20px; }
 
 /* importamos responsive al final */
 @media (min-width: 1441px) {
