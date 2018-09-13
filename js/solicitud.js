@@ -108,8 +108,13 @@ function calcularAvance(percent) {
 })
 
   $('#btn-avanza-carga-docs').click(function(){
-      $('#datos-generales').addClass('animated fadeOutLeft hidden');
-      $('#carga-docs').removeClass('hidden').addClass('animated bounceInRight');
+      $('#datos-generales').addClass('animated fadeOutRight hidden');
+      if(isMobile){
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      }
+      setTimeout(function(){
+          $('#carga-docs').removeClass('hidden').addClass('animated fadeInUpBig');
+      },800)
       $('#mobile-form-header').text('Carga de Documentos');
   })
 
