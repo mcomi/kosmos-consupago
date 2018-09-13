@@ -1,3 +1,8 @@
+var isMobile = false;
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ isMobile = true;
+}
+
 // objeto constructor para formateo dinero
 var formatter = new Intl.NumberFormat('es-MX', {
   style: 'currency',
@@ -89,6 +94,9 @@ $('.btn-cotizador').click(function(){
   $('#elegir-monto').fadeOut('slow');
   $('#datos-solicitud').fadeIn('slow');
   document.getElementById('header-title').innerHTML = `Completar tu solicitud <br> es <span>Fácil</span> y <span>Rápido</span>`;
+  if(isMobile){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  }
 })
 
 // regresa a seleccion monto y plazo
@@ -96,6 +104,9 @@ $('#back-link-cotizador').click(function(){
   $('#datos-solicitud').fadeOut('slow');
   $('#elegir-monto').fadeIn('slow');
   document.getElementById('header-title').innerHTML = `Aprobamos hasta <span>80%</span> <br> de las solicitudes`;
+  if(isMobile){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+  }
 })
 
 // corregir telefono
@@ -349,6 +360,7 @@ $(function() {
     submitHandler: function(form) {
       $('#mandar-codigo-cel').removeClass('hidden');
       $('#loader-phone-message').removeClass('hidden');
+      $("html, body").animate({ scrollTop: 0 }, "slow");
       setTimeout(function(){
         $('#loader-phone-message').addClass('hidden');
         $('#sms-input-container').removeClass('hidden');
@@ -368,7 +380,7 @@ $(".code-input").bind('keyup', function() {
       if(indexCodeInput == 4) {
         $('#validando-sms').removeClass('hidden');
         setTimeout(function(){
-          window.location.href = window.location.origin+'/solicitud.html';
+          window.location.href = window.location.origin+'/kosmos-consupago/solicitud.html';
         }, 2000)
       }
     }
