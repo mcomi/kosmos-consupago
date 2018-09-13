@@ -199,7 +199,7 @@ var testimoniosWaypoint = new Waypoint({
       console.error(counterAnios.error);
     }
   },
-  offset: 'bottom-in-view'
+  offset: '50%'
 })
 
 

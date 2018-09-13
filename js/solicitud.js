@@ -150,3 +150,117 @@ function calcularAvance(percent) {
       }
       $('#mobile-form-header').text('Firma y envío de contratos');
   });
+
+  // carga de ine
+  $('#drop-area-front').dmUploader({ //
+    url: 'https://httpstat.us/200',   // url publica para recibir un status 'ok' y ver funcionar la animacion
+    maxFileSize: 3000000, // 3 Megs
+    onDragEnter: function(){
+      // Happens when dragging something over the DnD area
+      this.addClass('active');
+    },
+    onDragLeave: function(){
+      // Happens when dragging something OUT of the DnD area
+      this.removeClass('active');
+    },
+    onInit: function(){
+      // Plugin is ready to use
+      console.log('Carga inicializada');
+    },
+    onComplete: function(){
+      // All files in the queue are processed (success or error)
+      console.log('All pending tranfers finished');
+    },
+    onNewFile: function(id, file){
+      // When a new file is added using the file selector or the DnD area
+      
+      console.log('New file added #' + id);
+      console.log(id, file);
+      if (typeof FileReader !== "undefined"){
+        var reader = new FileReader();
+        var img = $('#uploaderFile' + id).find('.preview-img');
+        
+        reader.onload = function (e) {
+          img.attr('src', e.target.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    },
+    onUploadSuccess: function(id, data){
+      // A file was successfully uploaded
+      console.log('Server Response for file #' + id + ': ' + JSON.stringify(data));
+      console.log('Upload of file #' + id + ' COMPLETED', 'success');
+      console.log(id, 'success', '<button class="red btn-link delete-file-btn">Eliminar documento</button><button class="red btn-link modal-tag-btn"> <img src="img/tag-icon.svg" alt=""> Categorizar documento</button>');
+      console.log(id, 100, 'success', false);
+    },
+    onUploadError: function(id, xhr, status, message){
+      console.log(id, 'danger', message);
+      console.log(id, 0, 'danger', false);
+    },
+    onFallbackMode: function(){
+      // When the browser doesn't support this plugin :(
+        console.log('Plugin cant be used here, running Fallback callback', 'danger');
+    },
+    onFileSizeError: function(file){
+      console.log('File \'' + file.name + '\' cannot be added: size excess limit', 'danger');
+    }
+  });
+
+  $('#drop-area-back').dmUploader({ //
+    url: 'https://httpstat.us/200',   // url publica para recibir un status 'ok' y ver funcionar la animacion
+    maxFileSize: 3000000, // 3 Megs
+    onDragEnter: function(){
+      // Happens when dragging something over the DnD area
+      this.addClass('active');
+    },
+    onDragLeave: function(){
+      // Happens when dragging something OUT of the DnD area
+      this.removeClass('active');
+    },
+    onInit: function(){
+      // Plugin is ready to use
+      console.log('Carga inicializada');
+    },
+    onComplete: function(){
+      // All files in the queue are processed (success or error)
+      console.log('All pending tranfers finished');
+    },
+    onNewFile: function(id, file){
+      // When a new file is added using the file selector or the DnD area
+      
+      console.log('New file added #' + id);
+      console.log(id, file);
+      if (typeof FileReader !== "undefined"){
+        var reader = new FileReader();
+        var img = $('#uploaderFile' + id).find('.preview-img');
+        
+        reader.onload = function (e) {
+          img.attr('src', e.target.result);
+        }
+        reader.readAsDataURL(file);
+      }
+    },
+    onUploadSuccess: function(id, data){
+      // A file was successfully uploaded
+      console.log('Server Response for file #' + id + ': ' + JSON.stringify(data));
+      console.log('Upload of file #' + id + ' COMPLETED', 'success');
+      console.log(id, 'success', '<button class="red btn-link delete-file-btn">Eliminar documento</button><button class="red btn-link modal-tag-btn"> <img src="img/tag-icon.svg" alt=""> Categorizar documento</button>');
+      console.log(id, 100, 'success', false);
+    },
+    onUploadError: function(id, xhr, status, message){
+      console.log(id, 'danger', message);
+      console.log(id, 0, 'danger', false);
+    },
+    onFallbackMode: function(){
+      // When the browser doesn't support this plugin :(
+        console.log('Plugin cant be used here, running Fallback callback', 'danger');
+    },
+    onFileSizeError: function(file){
+      console.log('File \'' + file.name + '\' cannot be added: size excess limit', 'danger');
+    }
+  });
+
+  $('#btn-load-ife').click(function(){
+    $('#ife-upload').addClass('uploaded');
+  });
+  

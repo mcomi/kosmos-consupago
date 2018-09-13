@@ -1857,14 +1857,16 @@ ul.steps-list li span {
   width: 50%;
   margin-right: 50%; }
 
-.ruler, .ruler li {
+.ruler,
+.ruler li {
   margin: 0;
   padding: 0;
   list-style: none;
   display: inline-block; }
 
 /* IE6-7 Fix */
-.ruler, .ruler li {
+.ruler,
+.ruler li {
   *display: inline; }
 
 .ruler {
@@ -2066,6 +2068,9 @@ img.arrow-right {
 .margin-bottom-20 {
   margin-bottom: 20px; }
 
+.margin-top-20 {
+  margin-top: 20px; }
+
 .panel-secondary .panel-heading {
   background: #ed671e;
   color: #fff;
@@ -2102,6 +2107,92 @@ img.arrow-right {
 .location-div img {
   vertical-align: middle;
   margin-right: 10px; }
+
+.modal {
+  background: rgba(0, 0, 0, 0.7); }
+
+.modal-body .img-rechazado {
+  color: red;
+  text-align: center; }
+
+.modal-body .img-aprobado {
+  color: #5cb85c;
+  text-align: center; }
+
+.modal-body .img-rechazado:after {
+  content: '';
+  background-image: url("../img/rechazado.png");
+  width: 36px;
+  height: 36px;
+  top: 8px;
+  right: 2px;
+  position: absolute;
+  display: inline-block; }
+
+.modal-body .img-aprobado:after {
+  content: '';
+  background-image: url("../img/validationgreen.png");
+  width: 36px;
+  height: 36px;
+  top: 8px;
+  right: -5px;
+  position: absolute;
+  display: inline-block; }
+
+.dm-uploader {
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 0.25rem dashed #A5A5C7;
+  border-radius: 10px; }
+
+.dm-uploader.active {
+  border-radius: 0;
+  border: 0.25rem solid #337ab7; }
+
+.text-muted {
+  color: #868e96 !important; }
+
+.mb-5, .my-5 {
+  margin-bottom: 1rem !important;
+  margin-top: 1rem !important; }
+
+.p5 {
+  padding: 3rem !important; }
+
+.dm-uploader .btn {
+  position: relative;
+  overflow: hidden; }
+
+.dm-uploader .btn input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  border: solid transparent;
+  width: 100%;
+  opacity: 0;
+  cursor: pointer; }
+
+.modal .modal-header h3 {
+  text-align: center;
+  font-family: 'nexa_regular';
+  text-transform: uppercase; }
+
+.modal-body h4 {
+  text-align: center;
+  font-family: 'nexa_regular'; }
+
+h3.title-drop-area {
+  font-family: 'nexa_light';
+  text-align: center;
+  text-transform: uppercase; }
+
+h3.title-drop-area span {
+  color: #337ab7; }
 
 /* importamos responsive al final */
 @media (min-width: 1441px) {

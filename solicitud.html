@@ -439,12 +439,12 @@
 
 						<div class="col-md-12 col-xs-12 panel-icons">
 							<div class="col-md-3 col-xs-12 panel-icons">
-								<div class="panel-icon panel-upload-pc">
+								<div class="panel-icon panel-upload-pc" id="ife-upload" data-toggle="modal" data-target="#modalSubeIne">
 									<div>
 									</div>
 									<img src="img/ID.png" alt="" class="icon-tipo-doc">
 									<span class="margin-20"><br> IFE/INE</span>
-									<input type="file" accept="image/jpeg, image/png, application/pdf" />
+									<!-- <input type="file" accept="image/jpeg, image/png, application/pdf" /> -->
 								</div>
 								<span class="upload-action"><img src="img/agregar.png" alt=""> Agregar</span>
 								<span class="change-file hidden">Cambiar</span>
@@ -583,7 +583,71 @@
 		</div>
 	</div>
 
+		<!--modal sube INE -->
+		<div class="modal" id="modalSubeIne" tabindex="-1" role="dialog">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h3 id="modal-folio-titulo">Carga de Documentos</h3>
+						</div>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-md-3 col-xs-6 img-rechazado">
+									DOCUMENTO RECHAZADO
+									<img src="img/ine-no.png" alt="" class="img-responsive">
+								</div>	
+								<div class="col-md-3 col-xs-6 img-aprobado">
+									ASI ESTA PERFECTO
+										<img src="img/ine-si.png" alt="" class="img-responsive">
+									</div>
+								<div class="col-md-6 col-xs-12">
+									<h4>Porfavor sigue estas recomendaciones <br> para que podamos validar tu identificación</h4>
+									<p>1.- Coloca la credencial lo más centrada posible en la imagen.
+										<br>2.- No uses fondos del mismo color que la identificación. <br>
+										3.- El brillo del flash a las sombras no deberán de cubrir la imagen.
+									</p>
+								</div>
+								<div class="col-xs-12">
+									<div class="col-md-6 col-xs-12">
+										<h3 class="title-drop-area">seleccionar el <span>frente</span></h3>
+											<div id="drop-area-front" class="dm-uploader p5 text-center">
+													<h3 class="mb-5 mt-5 text-muted">Arrastra tus archivos <br> ó
+														<div class="btn btn-primary mb-5">
+																<span>Abre el explorador</span>
+																<input type="file" name="ine-front" title="Abre el explorador">
+															</div>
+													</h3>
+													
+												  </div>
+									</div>
+									<div class="col-md-6 col-xs-12">
+											<h3 class="title-drop-area">seleccionar el <span>reverso</span></h3>
+											<div id="drop-area-back" class="dm-uploader p5 text-center">
+													<h3 class="mb-5 mt-5 text-muted">Arrastra tus archivos <br> ó
+														<div class="btn btn-primary mb-5">
+																<span>Abre el explorador</span>
+																<input type="file" name="ine-back" title="Abre el explorador">
+															</div>
+													</h3>
+												  </div>
+									</div>
+								</div>
+								<div class="text-center margin-top-20 col-md-12 col-xs-12">
+									<button class="btn btn-primary" id="btn-load-ife">
+										CARGAR MI IFE/INE
+									</button>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
 	<script src="libs/jquery.js"></script>
 	<script src="libs/bootstrap.js"></script>
+	<script src="libs/jquery.dm-uploader.min.js"></script>
 	<script src="js/solicitud.js"></script>
 </body>
+</html>
