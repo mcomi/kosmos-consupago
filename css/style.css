@@ -2428,7 +2428,10 @@ img.arrow-right {
     padding-right: 0;
     padding-left: 0; }
   .left-half {
-    display: none; } }
+    display: none; }
+  .panel-contratos .col-xs-12 {
+    padding-left: 0;
+    padding-right: 0; } }
 
 @media (min-width: 801px) {
   .navbar-nav {
