@@ -84,7 +84,7 @@
 	<div class="row bg">
 
 		<div class="container form-container">
-			<div id="datos-generales">
+			<div id="datos-generales" class="hidden">
 
 				<div class="panel panel-primary" id="step-1">
 					<div class="panel-heading">¿Para que usaras tu dinero?</div>
@@ -375,9 +375,9 @@
 					<button id="btn-avanza-carga-docs" class="btn btn-big-form">Estas a un paso de obtener tu crédito <br> CONTINUAR</button>
 				</div>
 			</div>
-			<div id="carga-docs" class="hidden">
+			<div id="carga-docs" class="">
 				<div id="step-1-carga">
-					<div class="text-center">
+					<div class="text-center col-xs-12">
 						<div class="panel-preaprobado">
 							<h1 class="congratulations">
 								<img src="img/good.png" alt="" class="img-good">
@@ -388,13 +388,13 @@
 
 					</div>
 
-					<div class="col-md-10 col-md-offset-1">
+					<div class="col-md-10 col-md-offset-1 col-xs-12">
 						<div class="panel-elige-carga">
 							<div class="text-center">
 								<h1>Es la última etapa <br><span>Mándanos tus documentos</span></h1>
 								<p>IFE/INE - Penúltimo recibo - Penúltimo recibo - Penúltimo recibo</p>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-6 just-desktop">
 								<div class="col-md-12">
 									<img src="img/arrowleft.png" alt="" class="arrow-left">
 								</div>
@@ -404,14 +404,14 @@
 									<button class="btn btn-cotizador" id="boton-carga-desde-pc">Seguir aquí</button>
 								</div>
 							</div>
-							<div class="col-md-6 div-right">
+							<div class="col-md-6 col-xs-12 div-right">
 								<div class="col-md-12">
-									<img src="img/arrowright.png" alt="" class="arrow-rigth">
+									<img src="img/arrowright.png" alt="" class="arrow-rigth just-desktop">
 								</div>
 								<img src="img/celular.png" class="icon-docs" alt="">
 								<div class="tipo-escaneo">
 									Quiero tomarlos en foto <br>con mi celular
-									<button class="btn btn-cotizador">Seguir en mi celular</button>
+									<button class="btn btn-cotizador" id="btn-cel-docs">Seguir en mi celular</button>
 								</div>
 							</div>
 						</div>
@@ -419,8 +419,8 @@
 					</div>
 				</div>
 				<div id="step-2-carga" class="hidden">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="col-md-6">
+					<div class="col-md-10 col-md-offset-1 col-xs-12">
+						<div class="col-md-6 just-desktop">
 							<img src="img/Laptop.png" class="icon-docs" alt="">
 							<div class="seleccion-escaneo">
 								TENGO TODOS <br> MIS DOCUMENTOS <br> ESCANEADOS
@@ -428,7 +428,7 @@
 								</button>
 							</div>
 						</div>
-						<div class="col-md-6 div-right opacity-div">
+						<div class="col-md-6 just-desktop col-xs-12 div-right opacity-div">
 
 							<img src="img/celular.png" class="icon-docs" alt="">
 							<div class="seleccion-escaneo">
@@ -437,8 +437,8 @@
 							</div>
 						</div>
 
-						<div class="col-md-12 just-desktop panel-icons">
-							<div class="col-md-3 col-xs-12 panel-icons just-desktop">
+						<div class="col-md-12 col-xs-12 panel-icons">
+							<div class="col-md-3 col-xs-12 panel-icons">
 								<div class="panel-icon panel-upload-pc">
 									<div>
 									</div>
@@ -446,9 +446,10 @@
 									<span class="margin-20"><br> IFE/INE</span>
 									<input type="file" accept="image/jpeg, image/png, application/pdf" />
 								</div>
-								<span><img src="img/agregar.png" alt=""> Agregar</span>
+								<span class="upload-action"><img src="img/agregar.png" alt=""> Agregar</span>
+								<span class="change-file hidden">Cambiar</span>
 							</div>
-							<div class="col-md-3 col-xs-12 panel-icons just-desktop">
+							<div class="col-md-3 col-xs-12 panel-icons">
 								<div class="panel-icon panel-upload-pc">
 									<div>
 									</div>
@@ -456,9 +457,10 @@
 									<span>ESTADO <br> DE CUENTA</span>
 									<input type="file" accept="image/jpeg, image/png, application/pdf" />
 								</div>
-								<span><img src="img/agregar.png" alt=""> Agregar</span>
+								<span class="upload-action"><img src="img/agregar.png" alt=""> Agregar</span>
+								<span class="change-file hidden">Cambiar</span>
 							</div>
-							<div class="col-md-3 col-xs-12 panel-icons just-desktop">
+							<div class="col-md-3 col-xs-12 panel-icons">
 								<div class="panel-icon panel-upload-pc">
 									<div>
 									</div>
@@ -466,9 +468,10 @@
 									<span>PENÚLTIMO <br> RECIBO</span>
 									<input type="file" accept="image/jpeg, image/png, application/pdf" />
 								</div>
-								<span><img src="img/agregar.png" alt=""> Agregar</span>
+								<span class="upload-action"><img src="img/agregar.png" alt=""> Agregar</span>
+								<span class="change-file hidden">Cambiar</span>
 							</div>
-							<div class="col-md-3 col-xs-12 panel-icons just-desktop">
+							<div class="col-md-3 col-xs-12 panel-icons">
 								<div class="panel-icon panel-upload-pc">
 									<div>
 									</div>
@@ -476,23 +479,104 @@
 									<span>PENÚLTIMO <br> RECIBO <br> NÓMINA</span>
 									<input type="file" accept="image/jpeg, image/png, application/pdf" />
 								</div>
-								<span><img src="img/agregar.png" alt=""> Agregar</span>
+								<span class="upload-action"><img src="img/agregar.png" alt=""> Agregar</span>
+								<span class="change-file hidden">Cambiar</span>
 							</div>
 						</div>
 						<div class="col-md-12">
 							<div class="text-center margin-bottom-20">
-								<button class="btn btn-cotizador">Enviar mi Documentación</button>
+								<button class="btn btn-cotizador" id="btn-envia-docs">Enviar mi Documentación</button>
 							</div>
 						</div>
 
 					</div>
 				</div>
-				<div class="col-md-12 text-center">
+				<div class="col-md-12 col-xs-12 text-center">
 					<p class="nota-abajo">
 						<strong>Si no tienes toda la documentación a la mano ¡No te preocupes!</strong>
 						<br> <small>Guardaremos tu solicitud hasta el paso dutante 7 días <br>
 							Sólo debes ir al portal principal, ingresar tu número celular para regresar aquí. </small>
 					</p>
+				</div>
+			</div>
+
+			<div id="contratos" class="hidden">
+				<div class="text-center col-xs-12">
+					<div class="panel-preaprobado">
+						<h1 class="congratulations">
+							<img src="img/good.png" alt="" class="img-good">
+							Felicitaciones Dan. <br> Haz finalizado tu trámite
+						</h1>
+					</div>
+
+				</div>
+				<div class="col-xs-12 col-md-10 col-md-offset-1">
+					<div class="panel panel-secondary">
+						<div class="panel-heading">ESTAS LISTO PARA RECIBIR TUS $10,000</div>
+						<div class="panel-body">
+							<div class="text-center">
+								<h4>Descarga y firma tus contratos</h4>
+								<p>Recuerda firmar los contratos en el lugar asignado <br>
+								de lo contrario, será necesario firmar nuevamente el documento.</p>
+								<a href="" class="download-contrato">
+									<img src="img/download.png" alt="">
+									Contratos
+								</a>
+								<a href="" class="download-contrato">
+									<img src="img/download.png" alt="">
+									Guía de firmas
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-contratos">
+						<div class="panel-body">
+							<div class="text-center">
+								<h4>¿Cómo quieres mandar tus contratos?</h4>
+								<div class="col-xs-12 col-md-10 col-md-offset-1">
+									<div class="col-xs-12 col-md-6">
+										<div class="panel panel-primary">
+											<div class="panel-heading">MANDAR POR DHL <br> (SERVICIO GRATIS)</div>
+											<div class="panel-body">
+												<p>Lleva tu contrato firmado y la guía a una sucursal DHL.</p>
+												<p>O pide el servicio de recolección para hacernos llegar tus contratos sin costo alguno.</p>
+												<a href="" class="download-contrato">
+													<img src="img/download.png" alt="">
+													Guía de envío
+												</a>
+												<div class="col-xs-12 location-div">
+													<a href="">
+															<img src="img/location.png" alt="">
+													</a>
+													<div>Busca tu sucursal DHL más cercana</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-12 col-md-6">
+										<div class="panel panel-default">
+											<div class="panel-heading">AGENDAR UNA RECOLECCIÓN <br> A MI DOMICILIO</div>
+											<div class="panel-body">
+												<div class="form-group">
+													<label for="fecha-disponible">¿Cuál fecha está disponible</label>
+													<input class="form-control" type="text">
+												</div>
+												<div class="form-group">
+													<label for="horario">¿Cuál fecha está disponible</label>
+													<select class="form-control" name="horario" id="horario">
+														<option value="1">9:00 am - 12 am</option>
+														<option value="1">12 am - 4 pm</option>
+														<option value="1">4 pm - 8 pm</option>
+													</select>
+												</div>
+												<button class="btn btn-cotizador">Agendar cita</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 

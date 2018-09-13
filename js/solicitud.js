@@ -102,20 +102,46 @@ function calcularAvance(percent) {
       $('#step-2-carga').removeClass('hidden').addClass('animated bounceIn');
   })
 
+  $('#btn-cel-docs').click(function(){
+    $('#step-1-carga').hide('slow');
+    $('#step-2-carga').removeClass('hidden').addClass('animated bounceIn');
+})
+
   $('#btn-avanza-carga-docs').click(function(){
       $('#datos-generales').addClass('animated fadeOutLeft hidden');
       $('#carga-docs').removeClass('hidden').addClass('animated bounceInRight');
+      $('#mobile-form-header').text('Carga de Documentos');
   })
 
   $('.panel-icon input').change(function(e) {
       if (e.target.files[0].name) {
           var fileName = e.target.files[0].name;
-          console.log('The file "' + fileName +  '" has been selected.');  
           var input = $(this);
+          input.attr('disabled',true).css('bottom','150px');
           setTimeout(function(){
               input.closest('.panel-icon').addClass('uploaded');
+              input.closest('.panel-icon').siblings('.upload-action').addClass('hidden');
+              input.closest('.panel-icon').siblings('.change-file').removeClass('hidden');
               var rutaImagen = input.siblings('.icon-tipo-doc').attr('src');
               input.siblings('.icon-tipo-doc').attr('src', rutaImagen.replace(/(\.[\w\d_-]+)$/i, '-white.png'));
           }, 1500);
       }
-  })
+  });
+
+  $('.change-file').click(function(){
+    $(this).siblings('.panel-icon').removeClass('uploaded');
+    $(this).siblings('.panel-icon').find('input').attr('disabled', false).css('bottom', '0');
+    $(this).siblings('.upload-action').removeClass('hidden');
+    $(this).addClass('hidden');
+    var rutaImagen = $(this).siblings('.panel-icon').find('.icon-tipo-doc').attr('src');
+    $(this).siblings('.panel-icon').find('.icon-tipo-doc').attr('src', rutaImagen.replace(/-white/g, ''));    
+  });
+
+  $('#btn-envia-docs').click(function(){
+      $('#carga-docs').addClass('animated fadeOutRight hidden');
+      $('#contratos').removeClass('hidden').addClass('animated fadeInLeft');
+      if(isMobile){
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+      }
+      $('#mobile-form-header').text('Firma y envío de contratos');
+  });
