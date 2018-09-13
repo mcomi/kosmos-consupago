@@ -261,6 +261,7 @@ function calcularAvance(percent) {
   });
 
   $('#btn-load-ife').click(function(){
+    $('#modalSubeIne').modal('hide');
     $('#ife-upload').addClass('uploaded');
   });
   
