@@ -438,7 +438,7 @@ article {
       grid-column: 2; }
 
 .left-half article {
-  top: 43%; }
+  top: 30%; }
 
 .navbar {
   border: 0;
@@ -830,7 +830,11 @@ input[type="radio"]:checked + label .img-cdmx {
   border-radius: 0; }
 
 #back-link-cotizador {
-  cursor: pointer; }
+  cursor: pointer;
+  color: #003760 !important; }
+
+.backlink {
+  color: #003760 !important; }
 
 .btn-outline:hover {
   border-color: #ed671e;
@@ -1343,7 +1347,7 @@ output {
   color: #333; }
 
 .rangeslider__handle:active {
-  background-img: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4xMiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==");
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4xMiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==");
   background-size: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12)); }
 
@@ -2193,6 +2197,34 @@ h3.title-drop-area {
 
 h3.title-drop-area span {
   color: #337ab7; }
+
+.bubble {
+  position: absolute;
+  z-index: 2;
+  width: 200px;
+  top: 16%;
+  left: 16%; }
+
+.bubble p {
+  position: absolute;
+  top: 30px;
+  width: 152px;
+  line-height: 20px;
+  font-size: 12px;
+  left: 20px; }
+
+.bubble p span {
+  color: #ed671e; }
+
+.input-group-addon img {
+  height: 18px; }
+
+.alert {
+  background: #ed671e;
+  padding: 20px;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase; }
 
 /* importamos responsive al final */
 @media (min-width: 1441px) {

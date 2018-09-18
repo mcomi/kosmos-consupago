@@ -91,8 +91,13 @@ $('#celular-check').keyup(function(){
 
 // paso a formulario datos básicos
 $('.btn-cotizador').click(function(){
-  $('#elegir-monto').fadeOut('slow');
+  $('#elegir-monto').fadeOut();
   $('#datos-solicitud').fadeIn('slow');
+  $('.bubble').removeClass('hidden').addClass('animated fadeIn');
+  if($('#collapseExample').hasClass('in')) $('#collapseExample').removeClass('in');
+  setTimeout(function(){
+    $('.bubble').addClass('animated fadeOut');
+  }, 5200);
   document.getElementById('header-title').innerHTML = `Completar tu solicitud <br> es <span>Fácil</span> y <span>Rápido</span>`;
   if(isMobile){
     $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -138,7 +143,7 @@ var stepsWaypoint = new Waypoint({
   handler: function (direction) {
     $('.step--active').click();
   },
-  offset: '50%'
+  offset: 200
 })
 
 var stepsWaypoint = new Waypoint({
@@ -146,7 +151,7 @@ var stepsWaypoint = new Waypoint({
   handler: function (direction) {
     $('.step--active').click();
   },
-  offset: '40%'
+  offset: 150
 })
 
 var stepsWaypoint = new Waypoint({
@@ -154,7 +159,7 @@ var stepsWaypoint = new Waypoint({
   handler: function (direction) {
     $('.step--active').click();
   },
-  offset: '30%'
+  offset: 100
 })
 
 var stepsWaypoint = new Waypoint({
@@ -162,7 +167,7 @@ var stepsWaypoint = new Waypoint({
   handler: function (direction) {
     $('.step--active').click();
   },
-  offset: '20%'
+  offset: 50
 })
 
 var faqWaypoint = new Waypoint({
@@ -199,7 +204,7 @@ var testimoniosWaypoint = new Waypoint({
       console.error(counterAnios.error);
     }
   },
-  offset: '50%'
+  offset: 200
 })
 
 
@@ -290,7 +295,7 @@ menuLinks.each(function(index) {
 
 // scroll hacia el cotizador 
 $('.btn-cta').click(function(){
-  $('html, body').animate({ scrollTop: $('#cotizador').offset().top }, 'slow');
+  $('html, body').animate({ scrollTop: $('#cotizador').offset().top - 100 }, 'slow');
 });
 
 // efecto de ir escribiendo texto con libreria Typed

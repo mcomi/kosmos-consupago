@@ -265,3 +265,11 @@ function calcularAvance(percent) {
     $('#ife-upload').addClass('uploaded');
   });
   
+
+  $('#datetimepicker2').datepicker({
+    format: 'dd/mm/yyyy',
+});
+
+$('#btn-continuar-cel').click(function(){
+  $('#alert-sms-continuar').removeClass('hidden');
+})

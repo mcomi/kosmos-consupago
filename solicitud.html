@@ -424,7 +424,7 @@
 							<img src="img/Laptop.png" class="icon-docs" alt="">
 							<div class="seleccion-escaneo">
 								TENGO TODOS <br> MIS DOCUMENTOS <br> ESCANEADOS
-								<button class="btn-link">PUEDES SEGUIR EN TU CELULAR <br> EN CUALQUIER MOMENTO <i class="fa fa-arrow-right"></i>
+								<button class="btn-link" id="btn-continuar-cel">PUEDES SEGUIR EN TU CELULAR <br> EN CUALQUIER MOMENTO <i class="fa fa-arrow-right"></i>
 								</button>
 							</div>
 						</div>
@@ -435,6 +435,9 @@
 								LOS TENGO A LA MANO <br> Y PREFIERO TOMARLOS <br> EN FOTO CON MI CELULAR
 								<button class="btn btn-cotizador" disabled>Seguir en mi celular</button>
 							</div>
+						</div>
+						<div id="alert-sms-continuar" class="col-md-12 text-center hidden">
+								<div class="alert"> Te hemos enviado un link por SMS, accede desde tu <br> teléfono celular para tomar la fotografía a tus documentos </div>
 						</div>
 
 						<div class="col-md-12 col-xs-12 panel-icons">
@@ -558,11 +561,15 @@
 											<div class="panel-heading">AGENDAR UNA RECOLECCIÓN <br> A MI DOMICILIO</div>
 											<div class="panel-body">
 												<div class="form-group">
-													<label for="fecha-disponible">¿Cuál fecha está disponible</label>
-													<input class="form-control" type="text">
+													<label for="fecha-disponible">¿Cuál fecha está disponible?</label>
+													<div class="input-group date" id='datetimepicker2'>
+															<span class="input-group-addon"><img src="img/calendar.png" alt=""></span>
+															<input type="text" class="form-control">
+														  </div>
+													
 												</div>
 												<div class="form-group">
-													<label for="horario">¿Cuál fecha está disponible</label>
+													<label for="horario">¿A qué momento del día?</label>
 													<select class="form-control" name="horario" id="horario">
 														<option value="1">9:00 am - 12 am</option>
 														<option value="1">12 am - 4 pm</option>
@@ -648,6 +655,8 @@
 	<script src="libs/jquery.js"></script>
 	<script src="libs/bootstrap.js"></script>
 	<script src="libs/jquery.dm-uploader.min.js"></script>
+	<script src="libs/bootstrap-datepicker.min.js"></script>
+	<script src="libs/bootstrap-datepicker.es.min.js"></script>
 	<script src="js/solicitud.js"></script>
 </body>
 </html>
