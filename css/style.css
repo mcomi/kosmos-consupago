@@ -592,6 +592,7 @@ input[type=radio] {
   display: -ms-grid;
   display: grid;
   grid-auto-columns: minmax(92px, 0.5fr);
+  -ms-grid-columns: minmax(92px, 0.5fr);
   margin: 0 20px; }
 
 .div-dependencia {
@@ -619,6 +620,7 @@ input[type=radio] {
   display: -ms-grid;
   display: grid;
   grid-auto-columns: 1fr;
+  -ms-grid-columns: 1fr;
   margin: 0 20px; }
 
 .plazo-item {
