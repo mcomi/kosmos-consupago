@@ -565,15 +565,15 @@ input[type=radio] {
   display: none; }
 
 .dependencias-container {
-  display: -ms-grid;
-  display: grid;
-  grid-auto-columns: minmax(92px, 0.5fr);
-  -ms-grid-columns: minmax(92px, 0.5fr) minmax(92px, 0.5fr) minmax(92px, 0.5fr) minmax(92px, 0.5fr) minmax(92px, 0.5fr) minmax(92px, 0.5fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0 20px; }
 
 .div-dependencia {
-  -ms-grid-row: 1;
-      grid-row: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin: 0 2px; }
 
 .div-dependencia label {
@@ -593,16 +593,16 @@ input[type=radio] {
   background: #ed671e; }
 
 .plazos-container {
-  display: -ms-grid;
-  display: grid;
-  grid-auto-columns: 1fr;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin: 0 20px; }
 
 .plazo-item {
   background: #dcdcdc;
-  -ms-grid-row: 1;
-      grid-row: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin: 0 2px;
   padding: 10px 0;
   cursor: pointer; }
@@ -2412,10 +2412,9 @@ h3.title-drop-area span {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
   .div-dependencia {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    width: 30%; }
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+            flex: 0 0 30%; }
   .uso-dinero-items,
   .ocupaciones-box {
     display: -webkit-box;
