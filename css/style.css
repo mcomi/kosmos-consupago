@@ -426,6 +426,7 @@ article {
   display: -ms-grid;
   display: grid;
   min-height: 100vh;
+  height: 100vh;
   background-image: url("../img/background.png");
   background-size: cover; }
 
