@@ -3,6 +3,26 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
  isMobile = true;
 }
 
+function GetIEVersion() {
+  var sAgent = window.navigator.userAgent;
+  var Idx = sAgent.indexOf("MSIE");
+
+  // If IE, return version number.
+  if (Idx > 0) 
+    return parseInt(sAgent.substring(Idx+ 5, sAgent.indexOf(".", Idx)));
+
+  // If IE 11 then look for Updated user agent string.
+  else if (!!navigator.userAgent.match(/Trident\/7\./)) 
+    return 11;
+
+  else
+    return 0; //It is not IE
+}
+
+if (GetIEVersion() > 0) {
+  $('article').css('transform', 'translate(0, -16%)');
+}
+
 // objeto constructor para formateo dinero
 var formatter = new Intl.NumberFormat('es-MX', {
   style: 'currency',
