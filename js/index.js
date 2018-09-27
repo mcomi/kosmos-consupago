@@ -98,7 +98,7 @@ $('.btn-cotizador').click(function(){
   setTimeout(function(){
     $('.bubble').addClass('animated fadeOut');
   }, 5200);
-  document.getElementById('header-title').innerHTML = `Completar tu solicitud <br> es <span>Fácil</span> y <span>Rápido</span>`;
+  document.getElementById('header-title').innerHTML = 'Completar tu solicitud <br> es <span>F\xE1cil</span> y <span>R\xE1pido</span>';
   if(isMobile){
     $("html, body").animate({ scrollTop: 0 }, "slow");
   }
@@ -108,7 +108,7 @@ $('.btn-cotizador').click(function(){
 $('#back-link-cotizador').click(function(){
   $('#datos-solicitud').fadeOut('slow');
   $('#elegir-monto').fadeIn('slow');
-  document.getElementById('header-title').innerHTML = `Aprobamos hasta <span>80%</span> <br> de las solicitudes`;
+  document.getElementById('header-title').innerHTML = 'Aprobamos hasta <span>80%</span> <br> de las solicitudes';
   if(isMobile){
     $("html, body").animate({ scrollTop: 0 }, "slow");
   }
