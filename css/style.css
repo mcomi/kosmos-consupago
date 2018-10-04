@@ -1714,6 +1714,19 @@ input:checked + label.otro-uso-icon {
   display: -ms-flexbox;
   display: flex; }
 
+.pulsate {
+  -webkit-animation: pulsate 3s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  opacity: 1; }
+
+@-webkit-keyframes pulsate {
+  0% {
+    font-size: 26px; }
+  50% {
+    font-size: 25px; }
+  100% {
+    font-size: 26px; } }
+
 .item-ocupacion {
   -webkit-box-flex: 1;
       -ms-flex: 1;
