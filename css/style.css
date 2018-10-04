@@ -1606,14 +1606,14 @@ ul.steps-list li {
 
 .uso-dinero-items {
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 76px; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .eleccion-uso-item {
-  -ms-grid-row: 1;
-      grid-row: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-align: center;
   display: block;
   width: 100%;
@@ -1632,7 +1632,7 @@ ul.steps-list li {
   background-repeat: no-repeat;
   display: inline-block;
   width: 100px;
-  height: 25px; }
+  height: 30px; }
 
 .label-img:hover {
   -webkit-filter: brightness(1.2) grayscale(0.5) opacity(0.9);
@@ -1710,13 +1710,14 @@ input:checked + label.otro-uso-icon {
   padding-top: 165px; }
 
 .ocupaciones-box {
-  display: -ms-grid;
-  display: grid;
-  grid-auto-columns: 1fr; }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 .item-ocupacion {
-  -ms-grid-row: 1;
-      grid-row: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   margin: 0 2px;
   padding: 10px 0;
   cursor: pointer;
